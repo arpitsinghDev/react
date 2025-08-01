@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Browser from "./component/Browser";
 import { App } from "./App";
 import { Login } from "./component/Login";
-
+import ErrorPage from "./component/ErrorPage"
 const appRouter = createBrowserRouter([
         {
             path: "/",
@@ -16,8 +16,9 @@ const appRouter = createBrowserRouter([
             path: "/login",
             element: <Login />
         },
-        {
-            defaultElement: <h1>Page not found</h1>
-        }
+         {
+    path: "*", // Catch-all route for unmatched paths
+    element: <ErrorPage />,
+  }
     ])
 export default appRouter;

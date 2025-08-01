@@ -1,9 +1,15 @@
 import ReactDOM from "react-dom/client";
-import appRouter from "./appRouter.js";
+import appRouter from "./appRouter";
 import { RouterProvider } from "react-router";
+
+import { Provider } from "react-redux";
+import  store  from "./utility/appStore";
+import React from "react";
 const AppLayout = () =>{
     return (
-    <RouterProvider router={appRouter}/>
+        <Provider store={store}>
+            <RouterProvider router={appRouter}/>
+        </Provider>
     )
 }
 
