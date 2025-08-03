@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 import { validateAuthForm } from "../utility/authFormValidate";
 import { auth } from "../utility/firebase";
 import { signInWithEmailAndPassword,createUserWithEmailAndPassword } from "firebase/auth";
-import { addUser } from "../utility/userSlice";
-import { useDispatch } from "react-redux";
+import { addUser } from "../utility/store/userSlice";
+import Header from "./Header";
 export const Login = () => {
-  const dispatch=useDispatch()
+
   const [isLogInForm, setIsLogInForm] = useState(false);
   const [errMessage, setErrMessage] = useState(null);
   const emailRef = useRef(null);
@@ -26,15 +26,13 @@ export const Login = () => {
           // Signed in
           const user = userCredential.user;
           const { uid,accessToken,email,displayName}=user;
-          console.log(user);
            dispatch(addUser({
             uid,accessToken,email,displayName
            }));
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          setErrMessage(error.message);
+          setErrMessage(error.code);
         });
     } else {
       // Handle sign-up logic
@@ -50,12 +48,13 @@ export const Login = () => {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          setErrMessage(error.message);
+          setErrMessage(error.code);
         });
     }
   };
   return (
+    <>
+    <Header/>
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form className="bg-white p-8 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-6 text-center">
@@ -125,5 +124,6 @@ export const Login = () => {
         </p>
       </form>
     </div>
+    </>
   );
 };
