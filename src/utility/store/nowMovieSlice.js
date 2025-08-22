@@ -10,6 +10,6 @@ const nowMovie=createSlice({
 });
 
 
-export default nowMovie.reducers;
+export default nowMovie.reducer;
 
 export const {addNowMovie,removeNowMovie}=nowMovie.actions;

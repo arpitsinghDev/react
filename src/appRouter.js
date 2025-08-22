@@ -3,6 +3,7 @@ import Browser from "./component/Browser";
 import { App } from "./App";
 import { Login } from "./component/Login";
 import ErrorPage from "./component/ErrorPage"
+import MovieCover from "./component/MainMovie/MovieCover";
 const appRouter = createBrowserRouter([
         {
             path: "/",
@@ -11,6 +12,10 @@ const appRouter = createBrowserRouter([
         {
             path: "/browser",
             element: <Browser />
+        },
+        {
+            path: "/movie/:id",
+            element: <MovieCover />
         },
         {
             path: "/login",
