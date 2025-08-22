@@ -7,4 +7,5 @@ export const API_OPTION = {
 };
 
 export const MOVIE_NOW="https://api.themoviedb.org/3/movie/now_playing"
+export const MOVIE_DETAIL="'https://api.themoviedb.org/3/movie/"
 export const MOVIE_POSTER_W5="https://image.tmdb.org/t/p/w500/"

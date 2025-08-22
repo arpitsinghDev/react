@@ -34,7 +34,6 @@ const Browser = () => {
   }, []);
   return (
     <div>
-      <Header />
       <ListMovies />
     </div>
   );

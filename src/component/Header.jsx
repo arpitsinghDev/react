@@ -20,7 +20,7 @@ const Header = () => {
             displayName,
           })
         );
-        navigate("/browser");
+        navigate("/");
       } else {
         navigate("/login");
       }
