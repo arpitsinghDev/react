@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Header from "./Header";
 import { useDispatch } from "react-redux";
 import { API_OPTION, MOVIE_NOW } from "../utility/constant";
 import { addNowMovie } from "../utility/store/nowMovieSlice";
