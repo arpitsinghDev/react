@@ -8,6 +8,7 @@ import { PopularMovie } from "./component/PopularMovie";
 import { ComingMovie } from "./component/ComingMovie";
 import { TopRatedMovie } from "./component/TopRatedMovie";
 import { ReleasedMovie } from "./component/ReleasedMovie";
+import TestAi from "./TestAi";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -43,10 +44,13 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/test-ai",
+    element: <TestAi/>,
   },
   {
     path: "*", // Catch-all route for unmatched paths
